@@ -10,5 +10,8 @@ module.exports = function(app){
   const url = "/cities";
   app.use(url, router);
 
-  router.get("/", citiesController.getAll.bind(citiesController));
+  router.get("/", citiesController.select.bind(citiesController));
+  router.post("/", citiesController.insert.bind(citiesController));
+  router.put("/:id", citiesController.update.bind(citiesController));
+  router.delete("/:id", citiesController.delete.bind(citiesController));
 }
