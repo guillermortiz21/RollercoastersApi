@@ -8,5 +8,8 @@ module.exports = function(app){
   const url = "/rollercoasters";
   app.use(url, router);
 
-  router.get("/", rollercoastersController.getAll.bind(rollercoastersController));
+  router.get("/", rollercoastersController.select.bind(rollercoastersController));
+  router.post("/", rollercoastersController.insert.bind(rollercoastersController));
+  router.put("/:id", rollercoastersController.update.bind(rollercoastersController));
+  router.delete("/:id", rollercoastersController.delete.bind(rollercoastersController));
 }
