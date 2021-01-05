@@ -1,10 +1,10 @@
 const dbActions = require('../utils/DbActions');
 
-module.exports = class Rollercoasters{
+module.exports = class Parks{
   constructor(){
-    this.model = require('../models/Rollercoasters');
+    this.model = require('../models/Parks');
   }
-
+  
   async getAll(req, res){
     let rows = null;
     try{
@@ -17,7 +17,7 @@ module.exports = class Rollercoasters{
       console.log(`\nError: ${err}\n`);
       res.status(400).json({
         success: false,
-        error: "Error getting all rollercoasters"
+        error: "Error getting all parks"
       });
     }
   }

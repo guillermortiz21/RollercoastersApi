@@ -8,5 +8,5 @@ module.exports = function(app){
   const url = "/rollercoasters";
   app.use(url, router);
 
-  router.get("/", rollercoastersController.getAll);
+  router.get("/", rollercoastersController.getAll.bind(rollercoastersController));
 }
