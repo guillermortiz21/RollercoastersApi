@@ -4,6 +4,7 @@ const app = express();
 const db = require('./config/database');
 const cors = require('cors');
 const DB_PORT = process.env.DB_PORT || 5000;
+const RouteManager = require('./routes/RouteManager');
 
 db.authenticate()
   .then(() =>{
@@ -24,6 +25,8 @@ app.use(url, router);
 
 router.get('/', (req, res) => {
   res.status(200).json({
-    message:'First route!'
+    message:'Rollercoasters API!'
   });
 });
+
+RouteManager(app);
